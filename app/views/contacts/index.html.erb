@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row justify-content-center pt-4">
+    <div class="col-sm-7">
+
+     <%= form_tag contacts_path, class: "simple_form search", method: :get do %>
+        <div class="search-form-control from-group">
+          <%= text_field_tag :query,
+          params[:query],
+          placeholder: "Find a talent", class: "form-control string required"%>
+          <%= submit_tag "Search", class: "btn btn-flat" %>
+          <% end %>
+        </div>
+
+
+
+<!-- the list of contacts -->
+        <div class="cards">
+          <% @contacts.each do |contact| %>
+          <div class="card">
+          <h3 style="margin-top: 10px;"><%= contact.first_name %> <%= contact.last_name %></h3>
+          <p class="title"><%= contact.role %></p>
+          <p><%= contact.email_address %></p>
+          <p><%= contact.salary %></p>
+          <p><%= contact.location %></p>
+          <p><button>Contact</button></p>
+          </div>
+          <% end %>
+      </div>
+      <%= link_to "Back to home page", root_path, class: "btn btn-primary back-button" %>
+    </div>
+  </div>
+</div>
