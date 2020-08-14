@@ -2,6 +2,8 @@
   <div class="row justify-content-center pt-4">
     <div class="col-sm-7">
 
+<!-- search form  -->
+
      <%= form_tag contacts_path, class: "simple_form search", method: :get do %>
         <div class="search-form-control from-group">
           <%= text_field_tag :query,
@@ -11,21 +13,24 @@
           <% end %>
         </div>
 
-
-
 <!-- the list of contacts -->
+
         <div class="cards">
           <% @contacts.each do |contact| %>
           <div class="card">
-          <h3 style="margin-top: 10px;"><%= contact.first_name %> <%= contact.last_name %></h3>
-          <p class="title"><%= contact.role %></p>
-          <p><%= contact.email_address %></p>
-          <p><%= contact.salary %></p>
-          <p><%= contact.location %></p>
+          <h4 style="margin-top: 10px;"><%= contact.first_name %> <%= contact.last_name %></h4>
+          <h5 class="title"><%= contact.role %></h5>
+          <hr>
+<!--   Icons  -->
+          <p><i class="fas fa-envelope"></i> <%= contact.email_address %></p>
+          <p><i class="fas fa-pound-sign"></i> <%= contact.salary %></p>
+          <p><i class="fas fa-map-marker-alt"></i> <%= contact.location %></p>
           <p><button>Contact</button></p>
           </div>
           <% end %>
       </div>
+
+<!-- button to go back to home page -->
       <%= link_to "Back to home page", root_path, class: "btn btn-primary back-button" %>
     </div>
   </div>

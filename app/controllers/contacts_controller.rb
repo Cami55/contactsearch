@@ -1,3 +1,4 @@
+# Ilike - insensitive
 class ContactsController < ApplicationController
   def index
     if params[:query].present?
