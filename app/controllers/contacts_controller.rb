@@ -11,11 +11,14 @@ class ContactsController < ApplicationController
         OR contacts.location ILIKE :query \
       "
       @contacts = Contact.where(sql_query, query: "%#{params[:query]}%")
-# % before and fter sentence = can be anything before, or anything after, as long as the word I am searching for is included in the syllabus.
-# without the % the query is asking if the word is the syllabus.
-# With the % the query is asking if the word is included in the syllabus.
     else
       @contacts = Contact.all
     end
   end
 end
+
+# % before and fter sentence = can be anything before, or anything after, as long as the word I am searching for is included in the syllabus.
+# without the % the query is asking if the word is the syllabus.
+# With the % the query is asking if the word is included in the syllabus.
+# Can also add @@ to include everything from the text. search for several words seperately.
+# Search thru associations - you need to add join
