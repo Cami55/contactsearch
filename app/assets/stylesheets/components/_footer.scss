@@ -1,0 +1,25 @@
+.footer-container{
+  margin-left: 25px;
+  font-size: 19px;
+ letter-spacing: 6px;
+}
+
+.page-footer{
+  background-color: #e4e4e4;
+  letter-spacing: 2px;
+  font-size: 15px;
+}
+
+.footer-container i {
+  color: $dark-purple;
+  &:hover{
+    opacity: 0.15;
+  }
+}
+
+.footer-copyright{
+}
+
+.list-unstyled{
+  margin-bottom: 0px;
+}
