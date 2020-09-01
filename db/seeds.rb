@@ -11,7 +11,7 @@ contact_attributes = [
     last_name: "Stevens",
     email_address: "dave.stevens@gmail.com",
     role: "Ruby developer",
-    salary: "35 000",
+    salary: "35000",
     location: "Manchester"
   },
   {
